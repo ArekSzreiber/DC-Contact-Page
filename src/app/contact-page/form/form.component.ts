@@ -23,13 +23,15 @@ import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Val
 
       <app-input
         formControlName="name"
-        placeholder="Ethan Johnson">
-        <label>Name</label>
-      </app-input>
+        label="Name"
+        placeholder="Ethan Johnson"
+      ></app-input>
 
-      <app-input placeholder="ethan@johnson.com">
-        <label>Company Email</label>
-      </app-input>
+      <app-input
+        formControlName="email"
+        label="Company Email"
+        placeholder="ethan@johnson.com"
+      ></app-input>
 
       <app-select formControlName="companySize" [options]="companySizeOptions">
         <label>Company Size</label>

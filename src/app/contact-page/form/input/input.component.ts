@@ -1,11 +1,13 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-input',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   providers: [
     {
@@ -14,11 +16,40 @@ import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/for
       multi: true
     }
   ],
-  styles: [``],
+  styles: [`
+    @import '../../../../assets/variables';
+
+    #container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input {
+      background-color: $inputs-bg-color;
+      border-radius: 20px;
+      border: none;
+      color: $inputs-text-color;
+      font-size: 16px;
+      font-weight: 500;
+      height: 40px;
+      padding: 14px 24px;
+
+      &::placeholder {
+        color: $placeholder-text-color;
+        opacity: 1;
+      }
+    }
+
+    .label {
+      font-size: 14px;
+    }
+
+  `],
   template: `
-    <fieldset>
-      <ng-content select="label"></ng-content>
+    <fieldset id="container">
+      <label *ngIf="label" class="label">{{label}}</label>
       <input
+        class="input"
         type="text"
         [(ngModel)]="value"
         [placeholder]="placeholder"
@@ -29,6 +60,7 @@ import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/for
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() placeholder?: string;
+  @Input() label?: string;
   disabled = false;
 
   value: string = '';
