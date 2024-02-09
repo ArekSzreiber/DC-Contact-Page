@@ -25,7 +25,6 @@ import {NgOptimizedImage} from '@angular/common';
     }
 
     #header {
-      margin-top: 60px;
       text-align: center;
       align-self: center;
       max-width: 630px;
@@ -47,11 +46,24 @@ import {NgOptimizedImage} from '@angular/common';
 
 
     #card {
+      align-self: center;
       background-color: rgba($bg-color, 0.18);
-      padding: 30px 30px 107px;
       border-radius: 30px;
+      box-sizing: border-box;
       margin: 0 25px 25px;
-      align-self: stretch;
+      max-width: 1620px;
+      padding: 30px 30px 107px;
+    }
+
+    @media screen and (min-width: 1024px) {
+
+      #card {
+        margin-left: 64px;
+        margin-right: 64px;
+        padding-left: 64px;
+        padding-right: 64px;
+      }
+
     }
 
 

@@ -17,40 +17,87 @@ import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Val
     FormsModule,
   ],
   styles: [`
+
+    #form-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 16px;
+    }
+
+    $column-width: 520px;
+
+    .flex-child {
+      flex-grow: 1;
+      flex-basis: $column-width;
+    }
+
+    .flex-colspan2 {
+      flex-basis: calc(2 * $column-width);
+    }
+
+    @media screen and (min-width: 1024px) {
+      $column-width: 370px;
+      .flex-child {
+        flex-basis: $column-width;
+      }
+
+      .flex-colspan2 {
+        flex-basis: calc(2 * $column-width);
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      $column-width: 500px;
+      .flex-child {
+        flex-basis: $column-width;
+      }
+
+      .flex-colspan2 {
+        flex-basis: calc(2 * $column-width);
+      }
+    }
+
+
   `],
   template: `
-    <form [formGroup]="form" action="">
+    <form [formGroup]="form" id="form-container">
 
       <app-input
+        class="flex-child"
         formControlName="name"
         label="Name"
         placeholder="Ethan Johnson"
       ></app-input>
 
       <app-input
+        class="flex-child"
         formControlName="email"
         label="Company Email"
         placeholder="ethan@johnson.com"
       ></app-input>
 
       <app-select
+        class="flex-child"
         formControlName="companySize"
         [options]="companySizeOptions"
         label="Company Size"
       ></app-select>
 
       <app-select
+        class="flex-child"
         formControlName="subject"
         [options]="subjects"
         label="Subject"
       ></app-select>
 
       <app-textarea
+        class="flex-child flex-colspan2"
         formControlName="message"
         label="Message"
       ></app-textarea>
 
-      <app-button (click)="logForm()">Contact Sales</app-button>
+      <app-button class="flex-child flex-colspan2">Contact Sales</app-button>
     </form>
   `,
 })
@@ -83,7 +130,4 @@ export class FormComponent {
     });
   }
 
-  logForm() {
-    console.log(this.form.value);
-  }
 }
