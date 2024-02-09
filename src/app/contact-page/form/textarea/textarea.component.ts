@@ -28,7 +28,7 @@ import {NgIf} from '@angular/common';
     <fieldset class="input-container">
       <label *ngIf="label" class="label">{{label}}</label>
       <textarea
-        class="text-input textarea"
+        class="text-input textarea border-radius"
         rows="10"
         [(ngModel)]="value"
         (input)="onInput($any($event).target.value)"

@@ -26,7 +26,7 @@ export interface Option {
     <fieldset class="input-container">
       <label *ngIf="label" class="label">{{label}}</label>
 
-      <select [(ngModel)]="value" class="select text-input">
+      <select [(ngModel)]="value" class="select text-input border-radius">
         @for (option of options; track option) {
           <option [value]="option">{{ option }}</option>
         }

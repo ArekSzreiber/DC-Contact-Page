@@ -48,7 +48,7 @@ import {NgOptimizedImage} from '@angular/common';
 
     #card {
       background-color: rgba($bg-color, 0.18);
-      padding: 30px;
+      padding: 30px 30px 107px;
       border-radius: 30px;
       margin: 0 25px 25px;
       align-self: stretch;

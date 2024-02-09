@@ -47,8 +47,11 @@ fieldset {
 .text-input {
   font-size: 16px;
   font-weight: 500;
-  border-radius: 15px;
   color: var(--inputs-text-color);
   background-color: var(--inputs-bg-color);
   border: none;
+}
+
+.border-radius {
+  border-radius: 15px;
 }

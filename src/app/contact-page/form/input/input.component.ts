@@ -34,7 +34,7 @@ import {NgIf} from '@angular/common';
     <fieldset class="input-container">
       <label *ngIf="label" class="label">{{label}}</label>
       <input
-        class="input text-input"
+        class="input text-input border-radius"
         type="text"
         [(ngModel)]="value"
         [placeholder]="placeholder"
