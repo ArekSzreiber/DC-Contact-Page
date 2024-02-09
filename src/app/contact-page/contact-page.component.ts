@@ -25,6 +25,7 @@ import {NgOptimizedImage} from '@angular/common';
     }
 
     #header {
+      margin-top: 60px;
       text-align: center;
       align-self: center;
       max-width: 630px;
