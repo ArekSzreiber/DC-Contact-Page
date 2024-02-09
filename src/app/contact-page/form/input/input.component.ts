@@ -19,19 +19,7 @@ import {NgIf} from '@angular/common';
   styles: [`
     @import '../../../../assets/variables';
 
-    #container {
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 22px;
-    }
-
     .input {
-      background-color: $inputs-bg-color;
-      border-radius: 15px;
-      border: none;
-      color: $inputs-text-color;
-      font-size: 16px;
-      font-weight: 500;
       height: 40px;
       padding: 14px 24px;
 
@@ -41,17 +29,12 @@ import {NgIf} from '@angular/common';
       }
     }
 
-    .label {
-      font-size: 14px;
-      padding-bottom: 6px;
-    }
-
   `],
   template: `
-    <fieldset id="container">
+    <fieldset class="input-container">
       <label *ngIf="label" class="label">{{label}}</label>
       <input
-        class="input"
+        class="input text-input"
         type="text"
         [(ngModel)]="value"
         [placeholder]="placeholder"

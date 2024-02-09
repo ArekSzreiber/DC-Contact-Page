@@ -33,13 +33,17 @@ import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Val
         placeholder="ethan@johnson.com"
       ></app-input>
 
-      <app-select formControlName="companySize" [options]="companySizeOptions">
-        <label>Company Size</label>
-      </app-select>
+      <app-select
+        formControlName="companySize"
+        [options]="companySizeOptions"
+        label="Company Size"
+      ></app-select>
 
-      <app-select formControlName="subject" [options]="subjects">
-        <label>Subject</label>
-      </app-select>
+      <app-select
+        formControlName="subject"
+        [options]="subjects"
+        label="Subject"
+      ></app-select>
 
       <app-textarea formControlName="message">
         <label>Message</label>

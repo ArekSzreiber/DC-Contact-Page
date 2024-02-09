@@ -1,5 +1,6 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {FormsModule, NG_VALUE_ACCESSOR, SelectControlValueAccessor} from '@angular/forms';
+import {NgIf} from '@angular/common';
 
 
 export interface Option {
@@ -10,7 +11,8 @@ export interface Option {
   selector: 'app-select',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   providers: [
     {
@@ -19,12 +21,12 @@ export interface Option {
       multi: true
     }
   ],
-  styles: [``],
+  styleUrls: ['./select.component.scss'],
   template: `
-    <fieldset>
-      <ng-content select="label"></ng-content>
+    <fieldset class="input-container">
+      <label *ngIf="label" class="label">{{label}}</label>
 
-      <select [(ngModel)]="value">
+      <select [(ngModel)]="value" class="select text-input">
         @for (option of options; track option) {
           <option [value]="option">{{ option }}</option>
         }
@@ -34,4 +36,5 @@ export interface Option {
 })
 export class SelectComponent extends SelectControlValueAccessor {
   @Input() options: string[] = [];
+  @Input() label?: string;
 }
