@@ -70,7 +70,7 @@ import {NgOptimizedImage} from '@angular/common';
 
   `],
   template: `
-    <img id="logo" ngSrc="../../assets/contact-form-icon.svg" width="100" height="30" alt="Becv-logo">
+    <img id="logo" ngSrc="assets/contact-form-icon.svg" width="100" height="30" alt="Becv-logo">
     <header id="header">
       <h1 id="heading">Interested in our business pricing?</h1>
       <p id="heading2">Fill out the form to view details and we’ll contact you as soon as possible.</p>
