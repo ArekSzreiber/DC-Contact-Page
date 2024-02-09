@@ -1,11 +1,13 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-textarea',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   providers: [
     {
@@ -14,12 +16,19 @@ import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/for
       multi: true
     }
   ],
-  styles: [``],
+  styles: [`
+    .textarea {
+      padding: 24px;
+      resize: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  `],
   template: `
-    <fieldset>
-      <ng-content select="label"></ng-content>
+    <fieldset class="input-container">
+      <label *ngIf="label" class="label">{{label}}</label>
       <textarea
-        cols="30"
+        class="text-input textarea"
         rows="10"
         [(ngModel)]="value"
         (input)="onInput($any($event).target.value)"
@@ -29,6 +38,7 @@ import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/for
 })
 export class TextareaComponent implements ControlValueAccessor {
   @Input() placeholder?: string;
+  @Input() label?: string;
   disabled = false;
 
   value: string = '';

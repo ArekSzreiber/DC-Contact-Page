@@ -45,9 +45,11 @@ import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Val
         label="Subject"
       ></app-select>
 
-      <app-textarea formControlName="message">
-        <label>Message</label>
-      </app-textarea>
+      <app-textarea
+        formControlName="message"
+        label="Message"
+      ></app-textarea>
+
       <app-button (click)="logForm()">Contact Sales</app-button>
     </form>
   `,
