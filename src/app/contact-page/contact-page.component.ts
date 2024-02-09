@@ -62,6 +62,7 @@ import {NgOptimizedImage} from '@angular/common';
         margin-right: 64px;
         padding-left: 64px;
         padding-right: 64px;
+        padding-bottom: 64px;
       }
 
     }
