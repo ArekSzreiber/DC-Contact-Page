@@ -29,7 +29,6 @@ import {NgOptimizedImage} from '@angular/common';
       align-self: center;
       max-width: 630px;
       word-spacing: 3px;
-      transform: scale(0.72);
     }
 
     #heading {
