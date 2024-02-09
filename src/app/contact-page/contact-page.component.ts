@@ -29,18 +29,19 @@ import {NgOptimizedImage} from '@angular/common';
       text-align: center;
       align-self: center;
       max-width: 630px;
-      word-spacing: 2px;
+      word-spacing: 3px;
+      transform: scale(0.72);
     }
 
     #heading {
       font-size: 64px;
-      letter-spacing: -3px;
+      letter-spacing: -2px;
       margin: 0;
     }
 
     #heading2 {
       font-size: 32px;
-      letter-spacing: -2.2px;
+      letter-spacing: -1px;
       margin: 20px 0 60px;
     }
 
