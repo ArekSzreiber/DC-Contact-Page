@@ -22,11 +22,12 @@ import {NgIf} from '@angular/common';
     #container {
       display: flex;
       flex-direction: column;
+      padding-bottom: 22px;
     }
 
     .input {
       background-color: $inputs-bg-color;
-      border-radius: 20px;
+      border-radius: 15px;
       border: none;
       color: $inputs-text-color;
       font-size: 16px;
@@ -42,6 +43,7 @@ import {NgIf} from '@angular/common';
 
     .label {
       font-size: 14px;
+      padding-bottom: 6px;
     }
 
   `],
