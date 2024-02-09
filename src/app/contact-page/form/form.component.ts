@@ -52,11 +52,11 @@ export class FormComponent {
   form: FormGroup;
   companySizeOptions: string[] = [
     '1-4 employees',
-    '5-14 employees',
-    '15-49 employees',
+    '5-9 employees',
+    '10-49 employees',
     '50-100 employees',
-    '101-249 employees',
-    '250+ employees',
+    '101-499 employees',
+    '500+ employees',
   ];
   subjects: string[] = [
     'Building Landing pages',
